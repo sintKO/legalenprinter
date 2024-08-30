@@ -11,24 +11,37 @@
 </head>
 <body>
     <div id="app">
-        <h1>Trade Signals</h1>
-        <div id="current-position">
-            <h2>Current Position</h2>
-            <p id="position-details">Loading...</p>
+        <div id="trades" class="tab-content active">
+            <h1>Trade Signals</h1>
+            <div id="current-position">
+                <h2>Current Position</h2>
+                <p id="position-details">Loading...</p>
+            </div>
+            <button id="copyTradeBtn">Copy Trade</button>
         </div>
-        <button id="copyTradeBtn">Copy Trade</button>
-        <div id="leaderboard">
+        
+        <div id="leaderboard-tab" class="tab-content">
             <h2>Leaderboard</h2>
             <ul id="leaderboard-list">
                 <!-- Leaderboard items will be inserted here -->
             </ul>
         </div>
+        
+        <div id="friends" class="tab-content">
+            <h2>Friends</h2>
+            <p>Friends content goes here.</p>
+        </div>
+        
+        <div id="profile" class="tab-content">
+            <h2>Profile</h2>
+            <p>Profile content goes here.</p>
+        </div>
     </div>
     
     <!-- Add the navbar -->
     <nav id="navbar">
-        <a href="#trades"><i class="fas fa-chart-line"></i><span>Trades</span></a>
-        <a href="#leaderboard"><i class="fas fa-trophy"></i><span>Leaderboard</span></a>
+        <a href="#trades" class="active"><i class="fas fa-chart-line"></i><span>Trades</span></a>
+        <a href="#leaderboard-tab"><i class="fas fa-trophy"></i><span>Leaderboard</span></a>
         <a href="#friends"><i class="fas fa-users"></i><span>Friends</span></a>
         <a href="#profile"><i class="fas fa-user"></i><span>Profile</span></a>
     </nav>
