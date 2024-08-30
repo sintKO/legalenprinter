@@ -108,14 +108,15 @@ function init() {
     const navItems = document.querySelectorAll('#navbar a');
     navItems.forEach(item => item.addEventListener('click', handleNavbarClick));
     
-    // Set 'Trades' as the default active tab
-    document.querySelector('#navbar a[href="#trades"]').classList.add('active');
-    document.getElementById('trades').classList.add('active');
+    // Set 'Dashboard' as the default active tab
+    document.querySelector('#navbar a[href="#dashboard"]').classList.add('active');
+    document.getElementById('dashboard').classList.add('active');
 
-    // Hide loading spinner
+    // Hide loading spinner and show app content
     setTimeout(() => {
         document.getElementById('loading').style.display = 'none';
-    }, 1500); // Simulated loading time of 1.5 seconds
+        document.getElementById('app').classList.add('loaded');
+    }, 500); // 0.5 seconds loading time
 }
 
 // Make sure init is called when the page loads
