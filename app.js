@@ -45,10 +45,26 @@ function updateLeaderboard() {
     });
 }
 
+// Handle navbar item clicks
+function handleNavbarClick(event) {
+    event.preventDefault();
+    const navItems = document.querySelectorAll('#navbar a');
+    navItems.forEach(item => item.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+    // Here you can add logic to show/hide different sections based on the clicked item
+}
+
 // Initialize the app
 function init() {
     updateCurrentPosition();
     updateLeaderboard();
+    
+    // Add click event listeners to navbar items
+    const navItems = document.querySelectorAll('#navbar a');
+    navItems.forEach(item => item.addEventListener('click', handleNavbarClick));
+    
+    // Set 'Trades' as the default active tab
+    document.querySelector('#navbar a[href="#trades"]').classList.add('active');
 }
 
 // Run initialization when the page loads
