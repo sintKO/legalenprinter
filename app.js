@@ -45,16 +45,21 @@ function updateLeaderboard() {
     });
 }
 
-// Add this function to your existing JavaScript
+// Handle navbar item clicks
 function handleNavbarClick(event) {
     event.preventDefault();
     const navItems = document.querySelectorAll('#navbar a');
     navItems.forEach(item => item.classList.remove('active'));
     event.currentTarget.classList.add('active');
-    // Here you can add logic to show/hide different sections based on the clicked item
+    
+    // Show the corresponding tab content
+    const tabId = event.currentTarget.getAttribute('href').substring(1);
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
 }
 
-// Modify your init function to include navbar setup
+// Initialize the app
 function init() {
     updateCurrentPosition();
     updateLeaderboard();
@@ -65,6 +70,7 @@ function init() {
     
     // Set 'Trades' as the default active tab
     document.querySelector('#navbar a[href="#trades"]').classList.add('active');
+    document.getElementById('trades').classList.add('active');
 }
 
 // Make sure init is called when the page loads
