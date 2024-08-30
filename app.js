@@ -45,6 +45,44 @@ function updateLeaderboard() {
     });
 }
 
+// Simulated friends data (replace with real data later)
+const friendsData = [
+    { name: "Friend1", avatar: "https://via.placeholder.com/50" },
+    { name: "Friend2", avatar: "https://via.placeholder.com/50" },
+    { name: "Friend3", avatar: "https://via.placeholder.com/50" }
+];
+
+// Update friends display
+function updateFriends() {
+    const friendsList = document.getElementById('friends-list');
+    friendsList.innerHTML = '';
+    friendsData.forEach(friend => {
+        const div = document.createElement('div');
+        div.className = 'friend-item';
+        div.innerHTML = `
+            <img src="${friend.avatar}" alt="${friend.name}">
+            <span>${friend.name}</span>
+        `;
+        friendsList.appendChild(div);
+    });
+}
+
+// Simulated profile data (replace with real data later)
+const profileData = {
+    name: "John Doe",
+    bio: "Passionate trader and investor",
+    pnl: 5000,
+    avatar: "https://via.placeholder.com/100"
+};
+
+// Update profile display
+function updateProfile() {
+    document.getElementById('profile-name').textContent = profileData.name;
+    document.getElementById('profile-bio').textContent = profileData.bio;
+    document.getElementById('profile-pnl').textContent = `$${profileData.pnl}`;
+    document.getElementById('profile-picture').src = profileData.avatar;
+}
+
 // Handle navbar item clicks
 function handleNavbarClick(event) {
     event.preventDefault();
@@ -63,6 +101,8 @@ function handleNavbarClick(event) {
 function init() {
     updateCurrentPosition();
     updateLeaderboard();
+    updateFriends();
+    updateProfile();
     
     // Add click event listeners to navbar items
     const navItems = document.querySelectorAll('#navbar a');
@@ -71,6 +111,11 @@ function init() {
     // Set 'Trades' as the default active tab
     document.querySelector('#navbar a[href="#trades"]').classList.add('active');
     document.getElementById('trades').classList.add('active');
+
+    // Hide loading spinner
+    setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+    }, 1500); // Simulated loading time of 1.5 seconds
 }
 
 // Make sure init is called when the page loads
