@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
     <div id="app">
         <div id="trades" class="tab-content active">
             <h1>Trade Signals</h1>
@@ -29,12 +32,19 @@
         
         <div id="friends" class="tab-content">
             <h2>Friends</h2>
-            <p>Friends content goes here.</p>
+            <div id="friends-list">
+                <!-- Friend items will be inserted here -->
+            </div>
         </div>
         
         <div id="profile" class="tab-content">
             <h2>Profile</h2>
-            <p>Profile content goes here.</p>
+            <div class="profile-info">
+                <img src="https://via.placeholder.com/100" alt="Profile Picture" id="profile-picture">
+                <h3 id="profile-name">John Doe</h3>
+                <p id="profile-bio">Passionate trader and investor</p>
+                <p>Total PNL: <span id="profile-pnl">$0</span></p>
+            </div>
         </div>
     </div>
     
