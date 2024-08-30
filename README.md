@@ -1,4 +1,0 @@
-# LegalenPrinter
-
-
-Tuk pravim pari
