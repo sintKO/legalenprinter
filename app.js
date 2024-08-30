@@ -45,7 +45,7 @@ function updateLeaderboard() {
     });
 }
 
-// Handle navbar item clicks
+// Add this function to your existing JavaScript
 function handleNavbarClick(event) {
     event.preventDefault();
     const navItems = document.querySelectorAll('#navbar a');
@@ -54,7 +54,7 @@ function handleNavbarClick(event) {
     // Here you can add logic to show/hide different sections based on the clicked item
 }
 
-// Initialize the app
+// Modify your init function to include navbar setup
 function init() {
     updateCurrentPosition();
     updateLeaderboard();
@@ -67,5 +67,5 @@ function init() {
     document.querySelector('#navbar a[href="#trades"]').classList.add('active');
 }
 
-// Run initialization when the page loads
+// Make sure init is called when the page loads
 window.addEventListener('load', init);
