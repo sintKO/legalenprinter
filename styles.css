@@ -1,18 +1,21 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-color: #f0f2f5;
-    padding-bottom: 70px; /* Add padding to body to account for navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #app {
+    flex-grow: 1;
     max-width: 600px;
     margin: 0 auto;
     background-color: white;
-    border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow-y: auto;
 }
 
 h1, h2 {
@@ -50,10 +53,6 @@ h1, h2 {
 
 /* Navbar styles */
 #navbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-color: #ffffff;
     display: flex;
     justify-content: space-around;
@@ -77,4 +76,12 @@ h1, h2 {
 
 #navbar a.active {
     color: #0088cc;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
 }
