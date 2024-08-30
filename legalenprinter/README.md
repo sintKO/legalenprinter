@@ -1,5 +1,0 @@
-# LegalenPrinter
-
-🙌
-
-Tuk pravim pari
