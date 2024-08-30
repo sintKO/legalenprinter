@@ -32,9 +32,9 @@ tg.expand();
 
 let button = document.getElementById("mainButton");
 button.addEventListener("click", () => {
-    tg.showAlert("You clicked the button!");
+    tg.showAlert("Woow!!!");
 });
 
 tg.MainButton.setText("Main Button").show().onClick(() => {
-    tg.showAlert("Main button clicked!");
+    tg.showAlert("Naistina go napravi");
 });
